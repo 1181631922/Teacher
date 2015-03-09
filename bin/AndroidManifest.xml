@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.sjzc.teacher"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.GuideActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--  -->
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.AppStartActivicy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiFragment.MainTabActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.SignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.HomeNewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.HomeInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.HomeExchangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.PerChangeInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.PerChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.PerPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.PerScheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.TeacherRankingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.edu.sjzc.teacher.uiActivity.AdvStudentInfoActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
