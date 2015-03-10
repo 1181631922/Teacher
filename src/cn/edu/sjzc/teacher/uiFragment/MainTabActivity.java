@@ -30,7 +30,7 @@ public class MainTabActivity extends FragmentActivity{
 									 R.drawable.tab_square_btn,R.drawable.tab_more_btn};
 	
 	//Tab选项卡的文字
-	private String mTextviewArray[] = {"首页", "查看评估", "查看意见", "查找学生", "个人信息"};
+	private String mTextviewArray[] = {"首页", "查看评估", "查看意见", "查找教师", "个人信息"};
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
