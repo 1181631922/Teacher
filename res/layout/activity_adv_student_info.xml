@@ -85,7 +85,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/username"
+                    android:id="@+id/student_info_name"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
@@ -93,7 +93,6 @@
                     android:layout_toRightOf="@id/user_name"
                     android:background="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="100"
                     android:textSize="16sp" />
             </RelativeLayout>
 
@@ -120,7 +119,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/usernewpwd"
+                    android:id="@+id/student_info_phone"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
@@ -128,7 +127,6 @@
                     android:layout_toRightOf="@id/user_newpwd"
                     android:background="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="15530124556"
                     android:textSize="16sp" />
             </RelativeLayout>
 
