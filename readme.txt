@@ -4,4 +4,5 @@
 4.HomePage做完了
 5.个人信息完成
 6.引入老师排名activity
-7.超找学生并且跳入新的activity
+7.查找学生并且跳入新的activity
+8.跳转并且带有数据
