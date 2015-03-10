@@ -1,6 +1,6 @@
 package cn.edu.sjzc.teacher.bean;
 
-public class StudentUserBean {
+public class StudentUserBean implements java.lang.Comparable{
 
 	private String userName;
 	private String phoneNum;
@@ -9,12 +9,12 @@ public class StudentUserBean {
 	
 	
 	
-	public StudentUserBean(String userName, String phoneNum,String py) {
+	public StudentUserBean(String userName, String phoneNum) {
 		super();
 		this.userName = userName;
 		this.phoneNum = phoneNum;
 	
-		this.py=py;
+//		this.py=py;
 	}
 	public String getUserName() {
 		return userName;
@@ -39,6 +39,15 @@ public class StudentUserBean {
 		return "StudentUserBean [userName=" + userName + ", phoneNum=" + phoneNum
 				+ ", py=" + py + "]";
 	}
+	@Override
+	public int compareTo(Object another) {
+		// TODO Auto-generated method stub
+		
+		StudentUserBean s = (StudentUserBean) another;
+		return 0;
+	}
+	
+	
 	
 	
 }

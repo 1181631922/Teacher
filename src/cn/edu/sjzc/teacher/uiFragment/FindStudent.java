@@ -9,6 +9,8 @@ import java.util.Map;
 import cn.edu.sjzc.teacher.R;
 import cn.edu.sjzc.teacher.adapter.StudentAdapter;
 import cn.edu.sjzc.teacher.bean.StudentUserBean;
+import cn.edu.sjzc.teacher.uiActivity.AdvStudentInfoActivity;
+import cn.edu.sjzc.teacher.uiActivity.PerPersonalInfoActivity;
 import cn.edu.sjzc.teacher.util.PinyinComparatorUtils;
 import cn.edu.sjzc.teacher.util.PinyinUtils;
 import cn.edu.sjzc.teacher.view.StudentSideBarView;
@@ -17,6 +19,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -27,6 +30,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -46,8 +50,12 @@ public class FindStudent extends Fragment implements
 	private TextView overlay;
 	private StudentSideBarView myView;
 	private StudentAdapter adapter;
+	private static List<Map<String, Object>> studentList = new ArrayList<Map<String, Object>>();
+	private String sname, sphone;
 
 	private OverlayThread overlayThread = new OverlayThread();
+
+	// public String[] userinfoArray;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,71 +122,82 @@ public class FindStudent extends Fragment implements
 
 		myView.setOnTouchingLetterChangedListener(this);
 
-		lvShow.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				// TODO Auto-generated method stub
-				Toast.makeText(getActivity(), "这是第几个"+position, 1000).show();
-			}
-		});
+		lvShow.setOnItemClickListener(new studentInfoOnItemClickListener());
 	}
 
-	private void getUserInfos() {
+	public void getUserInfos() {
 		StudentUserBean[] userinfoArray = new StudentUserBean[] {
-				new StudentUserBean("唐僧", "18765432345",
-						PinyinUtils.getAlpha("唐僧")),
-				new StudentUserBean("猪师弟", "18765432345",
-						PinyinUtils.getAlpha("猪师弟")),
-				new StudentUserBean("李四", "18909876545",
-						PinyinUtils.getAlpha("李四")),
-				new StudentUserBean("王小二", "18909876545",
-						PinyinUtils.getAlpha("王小二")),
-				new StudentUserBean("张三丰", "18909876545",
-						PinyinUtils.getAlpha("张三丰")),
-				new StudentUserBean("郭靖", "18909876545",
-						PinyinUtils.getAlpha("郭靖")),
-				new StudentUserBean("孙悟空", "18765432345",
-						PinyinUtils.getAlpha("孙悟空")),
-				new StudentUserBean("阿三", "18765432345",
-						PinyinUtils.getAlpha("阿三")),
-				new StudentUserBean("张三", "18765432345",
-						PinyinUtils.getAlpha("张三")),
-				new StudentUserBean("张二B", "18876569008",
-						PinyinUtils.getAlpha("张二B")),
-				new StudentUserBean("阿三", "18765432345",
-						PinyinUtils.getAlpha("阿三")),
-				new StudentUserBean("张三", "18765432345",
-						PinyinUtils.getAlpha("张三")),
-				new StudentUserBean("张二B", "18876569008",
-						PinyinUtils.getAlpha("张二B")),
-				new StudentUserBean("阿三", "18765432345",
-						PinyinUtils.getAlpha("阿三")),
-				new StudentUserBean("张三", "18765432345",
-						PinyinUtils.getAlpha("张三")),
-				new StudentUserBean("张二B", "18876569008",
-						PinyinUtils.getAlpha("张二B")),
-				new StudentUserBean("阿三", "18765432345",
-						PinyinUtils.getAlpha("阿三")),
-				new StudentUserBean("张三", "18765432345",
-						PinyinUtils.getAlpha("张三")),
-				new StudentUserBean("张二B", "18876569008",
-						PinyinUtils.getAlpha("张二B")),
-				new StudentUserBean("李四", "18909876545",
-						PinyinUtils.getAlpha("李四")),
-				new StudentUserBean("王小二", "18909876545",
-						PinyinUtils.getAlpha("王小二")),
-				new StudentUserBean("张三丰", "18909876545",
-						PinyinUtils.getAlpha("张三丰")),
-				new StudentUserBean("张无忌", "18909876545",
-						PinyinUtils.getAlpha("张无忌")),
-				new StudentUserBean("黄小贤", "18909876545",
-						PinyinUtils.getAlpha("黄小贤")) };
+				new StudentUserBean("韩冰", "13303116239"),
+				new StudentUserBean("张海春", "18765432345"),
+				new StudentUserBean("及徐冰", "18765432345"),
+				new StudentUserBean("邻里中", "18765432345"),
+				new StudentUserBean("宋红卫", "18765432345"),
+				new StudentUserBean("何东滨", "18765432345"),
+				new StudentUserBean("刘絮凝", "18765432345"),
+				new StudentUserBean("王丽娜", "18765432345"),
+				new StudentUserBean("长子李", "18765432345"),
+				new StudentUserBean("孙警务", "18765432345"),
+				new StudentUserBean("张军", "18765432345"),
+				new StudentUserBean("张兴华", "18765432345"),
+				new StudentUserBean("赵颖号", "18765432345"),
+				new StudentUserBean("刘志国", "18765432345"),
+				new StudentUserBean("段理应", "18765432345"),
+				new StudentUserBean("尽情用", "18765432345"),
+				new StudentUserBean("利亚", "18765432345"),
+				new StudentUserBean("问这", "18765432345"),
+				new StudentUserBean("董倩", "18765432345"),
+				new StudentUserBean("张舒梅", "18765432345"),
+				new StudentUserBean("与帖中", "18765432345"),
+				new StudentUserBean("梦军营", "18765432345"),
+				new StudentUserBean("梨园", "18765432345"),
+				new StudentUserBean("硫化", "18765432345") 
+				};
 
-		Arrays.sort(userinfoArray, new PinyinComparatorUtils());
+		for (int i = 0; i < userinfoArray.length; i++) {
+
+			StudentUserBean su = new StudentUserBean(sname, sphone);
+			String st = userinfoArray[i].getUserName();
+			String sp = userinfoArray[i].getPhoneNum();
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("s_name", st);
+			map.put("s_phone", sp);
+			studentList.add(map);
+		}
+
+		Arrays.sort(userinfoArray);
 
 		studentUserBeans = Arrays.asList(userinfoArray);
+	}
+
+	protected class studentInfoOnItemClickListener implements
+			OnItemClickListener {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			// TODO Auto-generated method stub
+
+			Intent it_student_info = new Intent(getActivity(),
+					AdvStudentInfoActivity.class);
+
+			int total = position + 1;
+			String mString = "个人信息" + total;
+
+			for (int i = 0; i <= position; i++) {
+				if (position == i) {
+
+					Map map = (Map) studentList.get(i);
+					String mstu = (String) map.get("s_name");
+					String mpho = (String) map.get("s_phone");
+					it_student_info.putExtra("student_name", mstu);
+					it_student_info.putExtra("student_phone", mpho);
+				}
+			}
+
+			startActivity(it_student_info);
+
+		}
+
 	}
 
 	private Handler handler = new Handler() {
