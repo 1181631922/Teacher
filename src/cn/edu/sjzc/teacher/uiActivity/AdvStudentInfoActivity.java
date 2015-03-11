@@ -33,7 +33,7 @@ public class AdvStudentInfoActivity extends Activity implements OnClickListener 
 		super.setContentView(R.layout.activity_adv_student_info);
 
 		init();
-		
+
 		initData();
 
 	}
@@ -45,12 +45,8 @@ public class AdvStudentInfoActivity extends Activity implements OnClickListener 
 		String student_name = it.getStringExtra("student_name");
 		String student_phone = it.getStringExtra("student_phone");
 
-		this.student_info_name = (TextView) super
-				.findViewById(R.id.student_info_name);
 		this.student_info_name.setText(student_name);
 
-		this.student_info_phone = (TextView) super
-				.findViewById(R.id.student_info_phone);
 		this.student_info_phone.setText(student_phone);
 	}
 
@@ -58,6 +54,12 @@ public class AdvStudentInfoActivity extends Activity implements OnClickListener 
 		ImageButton changepassword_back = (ImageButton) this
 				.findViewById(R.id.studentinfo_back);
 		changepassword_back.setOnClickListener(this);
+
+		this.student_info_name = (TextView) super
+				.findViewById(R.id.student_info_name);
+
+		this.student_info_phone = (TextView) super
+				.findViewById(R.id.student_info_phone);
 	}
 
 	@Override
