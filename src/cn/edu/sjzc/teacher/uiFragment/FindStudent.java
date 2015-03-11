@@ -150,8 +150,7 @@ public class FindStudent extends Fragment implements
 				new StudentUserBean("与帖中", "18765432345"),
 				new StudentUserBean("梦军营", "18765432345"),
 				new StudentUserBean("梨园", "18765432345"),
-				new StudentUserBean("硫化", "18765432345") 
-				};
+				new StudentUserBean("硫化", "18765432345") };
 
 		for (int i = 0; i < userinfoArray.length; i++) {
 
@@ -179,9 +178,6 @@ public class FindStudent extends Fragment implements
 
 			Intent it_student_info = new Intent(getActivity(),
 					AdvStudentInfoActivity.class);
-
-			int total = position + 1;
-			String mString = "个人信息" + total;
 
 			for (int i = 0; i <= position; i++) {
 				if (position == i) {
