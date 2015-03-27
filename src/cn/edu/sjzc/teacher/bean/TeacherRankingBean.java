@@ -1,6 +1,6 @@
 package cn.edu.sjzc.teacher.bean;
 
-public class TeacherRankingBean {
+public class TeacherRankingBean implements java.lang.Comparable{
 	int color;
 	int pencent;
 	String knowledgename;
@@ -29,6 +29,12 @@ public class TeacherRankingBean {
 
 	public void setKnowledgename(String knowledgename) {
 		this.knowledgename = knowledgename;
+	}
+
+	@Override
+	public int compareTo(Object another) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

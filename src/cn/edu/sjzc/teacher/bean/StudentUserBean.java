@@ -9,12 +9,12 @@ public class StudentUserBean implements java.lang.Comparable{
 	
 	
 	
-	public StudentUserBean(String userName, String phoneNum) {
+	public StudentUserBean(String userName, String phoneNum,String py) {
 		super();
 		this.userName = userName;
 		this.phoneNum = phoneNum;
 	
-//		this.py=py;
+		this.py=py;
 	}
 	public String getUserName() {
 		return userName;

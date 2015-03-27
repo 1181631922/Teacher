@@ -127,34 +127,34 @@ public class FindStudent extends Fragment implements
 
 	public void getUserInfos() {
 		StudentUserBean[] userinfoArray = new StudentUserBean[] {
-				new StudentUserBean("韩冰", "13303116239"),
-				new StudentUserBean("张海春", "18765432345"),
-				new StudentUserBean("及徐冰", "18765432345"),
-				new StudentUserBean("邻里中", "18765432345"),
-				new StudentUserBean("宋红卫", "18765432345"),
-				new StudentUserBean("何东滨", "18765432345"),
-				new StudentUserBean("刘絮凝", "18765432345"),
-				new StudentUserBean("王丽娜", "18765432345"),
-				new StudentUserBean("长子李", "18765432345"),
-				new StudentUserBean("孙警务", "18765432345"),
-				new StudentUserBean("张军", "18765432345"),
-				new StudentUserBean("张兴华", "18765432345"),
-				new StudentUserBean("赵颖号", "18765432345"),
-				new StudentUserBean("刘志国", "18765432345"),
-				new StudentUserBean("段理应", "18765432345"),
-				new StudentUserBean("尽情用", "18765432345"),
-				new StudentUserBean("利亚", "18765432345"),
-				new StudentUserBean("问这", "18765432345"),
-				new StudentUserBean("董倩", "18765432345"),
-				new StudentUserBean("张舒梅", "18765432345"),
-				new StudentUserBean("与帖中", "18765432345"),
-				new StudentUserBean("梦军营", "18765432345"),
-				new StudentUserBean("梨园", "18765432345"),
-				new StudentUserBean("硫化", "18765432345") };
+				new StudentUserBean("韩冰", "13303116239",PinyinUtils.getAlpha("韩冰")),
+				new StudentUserBean("张海春", "18765432345",PinyinUtils.getAlpha("张海春")),
+				new StudentUserBean("及徐冰", "18765432345",PinyinUtils.getAlpha("及徐冰")),
+				new StudentUserBean("邻里中", "18765432345",PinyinUtils.getAlpha("邻里中")),
+				new StudentUserBean("宋红卫", "18765432345",PinyinUtils.getAlpha("宋红卫")),
+				new StudentUserBean("何东滨", "18765432345",PinyinUtils.getAlpha("何东滨")),
+				new StudentUserBean("刘絮凝", "18765432345",PinyinUtils.getAlpha("刘絮凝")),
+				new StudentUserBean("王丽娜", "18765432345",PinyinUtils.getAlpha("王丽娜")),
+				new StudentUserBean("长子李", "18765432345",PinyinUtils.getAlpha("长子李")),
+				new StudentUserBean("孙警务", "18765432345",PinyinUtils.getAlpha("孙警务")),
+				new StudentUserBean("张军", "18765432345",PinyinUtils.getAlpha("张军")),
+				new StudentUserBean("张兴华", "18765432345",PinyinUtils.getAlpha("张兴华")),
+				new StudentUserBean("赵颖号", "18765432345",PinyinUtils.getAlpha("赵颖号")),
+				new StudentUserBean("刘志国", "18765432345",PinyinUtils.getAlpha("刘志国")),
+				new StudentUserBean("段理应", "18765432345",PinyinUtils.getAlpha("段理应")),
+				new StudentUserBean("尽情用", "18765432345",PinyinUtils.getAlpha("尽情用")),
+				new StudentUserBean("利亚", "18765432345",PinyinUtils.getAlpha("利亚")),
+				new StudentUserBean("问这", "18765432345",PinyinUtils.getAlpha("问这")),
+				new StudentUserBean("董倩", "18765432345",PinyinUtils.getAlpha("董倩")),
+				new StudentUserBean("张舒梅", "18765432345",PinyinUtils.getAlpha("张舒梅")),
+				new StudentUserBean("与帖中", "18765432345",PinyinUtils.getAlpha("与帖中")),
+				new StudentUserBean("梦军营", "18765432345",PinyinUtils.getAlpha("梦军营")),
+				new StudentUserBean("梨园", "18765432345",PinyinUtils.getAlpha("梨园")),
+				new StudentUserBean("硫化", "18765432345",PinyinUtils.getAlpha("硫化")) };
 
 		for (int i = 0; i < userinfoArray.length; i++) {
 
-			StudentUserBean su = new StudentUserBean(sname, sphone);
+			StudentUserBean su = new StudentUserBean(sname, sphone,null);
 			String st = userinfoArray[i].getUserName();
 			String sp = userinfoArray[i].getPhoneNum();
 			Map<String, Object> map = new HashMap<String, Object>();
