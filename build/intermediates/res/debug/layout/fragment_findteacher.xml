@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DCDCDC"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/upmost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:background="#4169E1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:text="查找教师"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="查找"
+             />
+
+        <FrameLayout
+            android:id="@+id/llParent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/lvShow"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:id="@+id/tvLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/show_head_toast_bg"
+                android:gravity="center"
+                android:maxWidth="70dip"
+                android:minWidth="70dip"
+                android:padding="10dip"
+                android:textColor="#99FFFFFF"
+                android:textSize="50sp" >
+            </TextView>
+
+            <cn.edu.sjzc.teacher.view.StudentSideBarView
+                android:id="@+id/myView"
+                android:layout_width="30dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right" >
+            </cn.edu.sjzc.teacher.view.StudentSideBarView>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/D:/Eclipse/SjzcTeacher_07/res/layout/fragment_findteacher.xml -->
