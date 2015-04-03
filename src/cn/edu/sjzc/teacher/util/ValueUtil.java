@@ -1,11 +1,13 @@
 package cn.edu.sjzc.teacher.util;
 
 import cn.edu.sjzc.teacher.uiActivity.AppStartActivicy;
+import cn.edu.sjzc.teacher.uiActivity.BaseActivity;
 import cn.edu.sjzc.teacher.uiActivity.GuideActivity;
 import cn.edu.sjzc.teacher.uiActivity.HomeExchangeActivity;
 import cn.edu.sjzc.teacher.uiActivity.HomeInfoActivity;
 import cn.edu.sjzc.teacher.uiActivity.HomeNewsActivity;
 import cn.edu.sjzc.teacher.uiActivity.LoginActivity;
+import cn.edu.sjzc.teacher.uiActivity.LoginDemoActivity;
 import cn.edu.sjzc.teacher.uiActivity.PerChangeInfoActivity;
 import cn.edu.sjzc.teacher.uiActivity.PerChangePasswordActivity;
 import cn.edu.sjzc.teacher.uiActivity.PerPersonalInfoActivity;
@@ -26,5 +28,7 @@ public class ValueUtil {
 	public static PerScheduleActivity perScheduleActivity;
 	public static SignActivity signActivity;
 	public static TeacherRankingActivity teacherRankingActivity;
+	public static BaseActivity baseActivity;
+	public static LoginDemoActivity loginDemoActivity;
 
 }

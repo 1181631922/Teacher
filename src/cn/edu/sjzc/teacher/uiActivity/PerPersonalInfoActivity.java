@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class PerPersonalInfoActivity extends Activity implements
+public class PerPersonalInfoActivity extends BaseActivity implements
 		OnClickListener {
 
 	private ImageButton personalinfo_back;

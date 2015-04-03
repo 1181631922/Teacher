@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class PerScheduleActivity extends Activity implements OnClickListener {
+public class PerScheduleActivity extends BaseActivity implements OnClickListener {
 
 	private ImageButton schedule_back;
 

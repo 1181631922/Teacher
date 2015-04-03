@@ -16,7 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 
-public class AppStartActivicy extends Activity {
+public class AppStartActivicy extends BaseActivity {
 	Thread thread;
 	protected void onCreate(Bundle savedInstanceState) {
 		  super.onCreate(savedInstanceState);

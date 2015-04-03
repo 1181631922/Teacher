@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 
 	private Button sign;
 	

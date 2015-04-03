@@ -42,8 +42,17 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FindStudent extends Fragment implements
+public class FindStudent extends BaseFragment implements
 		OnTouchingLetterChangedListener {
+	
+	public static BaseFragment newInstance(int index) {
+		BaseFragment fragment = new FindStudent();
+		Bundle args = new Bundle();
+		args.putInt("index", index);
+		fragment.setArguments(args);
+		fragment.setIndex(index);
+		return fragment;
+	}
 
 	private ListView lvShow;
 	private List<StudentUserBean> studentUserBeans;

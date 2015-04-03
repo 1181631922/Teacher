@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.ListView;
 
-public class TeacherRankingActivity extends Activity {
+public class TeacherRankingActivity extends BaseActivity {
 	Context context;
 	private HorizontalListView mListView;
 	private TeacherRankingAdapter teacherRankingAdapter;

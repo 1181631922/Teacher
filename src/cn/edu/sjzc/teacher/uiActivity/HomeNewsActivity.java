@@ -14,7 +14,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class HomeNewsActivity extends Activity {
+public class HomeNewsActivity extends BaseActivity {
 	/** Called when the activity is first created. */
 	WebView wv;
 	ProgressDialog pd;

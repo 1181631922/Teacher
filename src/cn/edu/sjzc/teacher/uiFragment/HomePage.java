@@ -30,7 +30,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomePage extends Fragment {
+public class HomePage extends BaseFragment {
+	
+	public static BaseFragment newInstance(int index) {
+		BaseFragment fragment = new HomePage();
+		Bundle args = new Bundle();
+		args.putInt("index", index);
+		fragment.setArguments(args);
+		fragment.setIndex(index);
+		return fragment;
+	}
 	
 	private LinearLayout home_news,home_info,home_exchange;
 

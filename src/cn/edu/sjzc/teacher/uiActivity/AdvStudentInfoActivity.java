@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class AdvStudentInfoActivity extends Activity implements OnClickListener {
+public class AdvStudentInfoActivity extends BaseActivity implements OnClickListener {
 
 	private ImageButton studentinfo_back;
 	private TextView student_info_name, student_info_phone;

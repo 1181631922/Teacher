@@ -12,7 +12,16 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class FindEvaluation extends Fragment implements OnClickListener {
+public class FindEvaluation extends BaseFragment implements OnClickListener {
+	
+	public static BaseFragment newInstance(int index) {
+		BaseFragment fragment = new FindEvaluation();
+		Bundle args = new Bundle();
+		args.putInt("index", index);
+		fragment.setArguments(args);
+		fragment.setIndex(index);
+		return fragment;
+	}
 
 	private Button eva_evaluation_but, eva_score_but, eva_otherteacher_but;
 

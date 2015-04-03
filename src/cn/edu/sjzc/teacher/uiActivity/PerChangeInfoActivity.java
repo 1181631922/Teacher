@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class PerChangeInfoActivity extends Activity implements OnClickListener {
+public class PerChangeInfoActivity extends BaseActivity implements OnClickListener {
 
 	private ImageButton changeperinfo_back;
 	

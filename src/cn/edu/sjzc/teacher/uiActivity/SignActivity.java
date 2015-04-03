@@ -20,23 +20,14 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class SignActivity extends Activity {
+public class SignActivity extends BaseActivity {
 
-	
-	
-	
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);// 生命周期方法
 		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
 		super.setContentView(R.layout.activity_sign);
-		
-		
 
 	}
-	
-	
-	
 
 }

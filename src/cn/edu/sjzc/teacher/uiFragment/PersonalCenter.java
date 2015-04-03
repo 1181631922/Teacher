@@ -16,7 +16,16 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class PersonalCenter extends Fragment implements OnClickListener {
+public class PersonalCenter extends BaseFragment implements OnClickListener {
+	
+	public static BaseFragment newInstance(int index) {
+		BaseFragment fragment = new PersonalCenter();
+		Bundle args = new Bundle();
+		args.putInt("index", index);
+		fragment.setArguments(args);
+		fragment.setIndex(index);
+		return fragment;
+	}
 
 	private Button user_but, per_person_but, per_password_but,
 			per_schedule_but;
